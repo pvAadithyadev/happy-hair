@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISTE - Indian Society for Technical Education</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        isteBlue: '#0066b3',
+                        isteGold: '#F5B041',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .nav-scrolled {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        .hero-shape {
+            clip-path: polygon(100% 0, 0 0, 100% 100%);
+        }
+        
+        .counter-item:hover .counter-value {
+            transform: scale(1.1);
+        }
+        
+        .iste-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+        }
+        
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: 2px solid #0066b3;
+        }
+        
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header Section -->
+    <header class="fixed w-full z-50 transition-all duration-300" id="header">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="bg-isteBlue text-white rounded-full p-3">
+                    <i class="fas fa-graduation-cap text-xl"></i>
+                </div>
+                <div class="ml-3">
+                    <h1 class="text-xl font-bold text-isteBlue">ISTE</h1>
+                    <p class="text-xs text-gray-600">Indian Society for Technical Education</p>
+                </div>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#home" class="text-isteBlue hover:text-isteGold font-medium transition">Home</a></li>
+                    <li><a href="#about" class="text-gray-700 hover:text-isteBlue font-medium transition">About</a></li>
+                    <li><a href="#events" class="text-gray-700 hover:text-isteBlue font-medium transition">Events</a></li>
+                    <li><a href="#members" class="text-gray-700 hover:text-isteBlue font-medium transition">Membership</a></li>
+                    <li><a href="#contact" class="text-gray-700 hover:text-isteBlue font-medium transition">Contact</a></li>
+                    <li><a href="#" class="bg-isteBlue text-white px-4 py-2 rounded-full font-medium hover:bg-opacity-90 transition">Join Us</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-isteBlue text-2xl" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white shadow-lg p-4">
+            <div class="flex justify-end mb-8">
+                <button class="text-gray-700 text-xl" id="closeMenuBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <ul class="space-y-6">
+                <li><a href="#home" class="text-xl text-isteBlue font-medium">Home</a></li>
+                <li><a href="#about" class="text-xl text-gray-700 hover:text-isteBlue font-medium">About</a></li>
+                <li><a href="#events" class="text-xl text-gray-700 hover:text-isteBlue font-medium">Events</a></li>
+                <li><a href="#members" class="text-xl text-gray-700 hover:text-isteBlue font-medium">Membership</a></li>
+                <li><a href="#contact" class="text-xl text-gray-700 hover:text-isteBlue font-medium">Contact</a></li>
+                <li class="mt-8"><a href="#" class="bg-isteBlue text-white px-6 py-3 rounded-full font-medium text-lg inline-block">Join Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-12 md:pt-32 md:pb-24 min-h-screen">
+        <div class="container mx-auto px-4 md:flex">
+            <div class="md:w-1/2 md:pr-10 flex flex-col justify-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-isteBlue mb-6">
+                    Empowering <span class="text-isteGold">Technical Educators</span> Across India
+                </h1>
+                <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                    The Indian Society for Technical Education (ISTE) is a national professional non-profit making society with the goal of providing quality training to technical education teachers.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#about" class="bg-isteBlue text-white px-6 py-3 rounded-full font-medium hover:bg-opacity-90 transition transform hover:-translate-y-1">
+                        Learn More
+                    </a>
+                    <a href="#events" class="border-2 border-isteBlue text-isteBlue px-6 py-3 rounded-full font-medium transition transform hover:-translate-y-1">
+                        View Events
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 mt-12 md:mt-0 relative">
+                <div class="absolute inset-0 bg-isteBlue opacity-10 rounded-full hero-shape">
+                </div>
+                <div class="relative flex justify-center">
+                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-96 md:h-[500px] flex items-center justify-center">
+                        <i class="fas fa-image text-5xl text-gray-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-isteBlue mb-4">About ISTE</h2>
+                <div class="h-1 w-24 bg-isteGold mx-auto rounded"></div>
+                <p class="mt-6 max-w-2xl mx-auto text-gray-700">
+                    ISTE is focused on improving technical education in India through faculty development programs, curriculum development, and educational technology initiatives.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <div class="bg-white rounded-xl shadow-lg p-8 iste-card transition duration-300">
+                    <div class="text-isteBlue text-4xl mb-4">
+                        <i class="fas fa-book-reader"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-isteBlue">Our Mission</h3>
+                    <p class="text-gray-700">
+                        To advance technical education through quality curriculum development, effective teaching, and meaningful assessment practices.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-8 iste-card transition duration-300">
+                    <div class="text-isteBlue text-4xl mb-4">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-isteBlue">Our Network</h3>
+                    <p class="text-gray-700">
+                        With more than 70,000 lifetime members, ISTE has created a nationwide community of technical educators sharing best practices.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-8 iste-card transition duration-300">
+                    <div class="text-isteBlue text-4xl mb-4">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-isteBlue">Training Programs</h3>
+                    <p class="text-gray-700">
+                        We conduct faculty development workshops, short-term training programs, and continuing education courses throughout the year.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-8 pt-6">
+                <div class="counter-item text-center">
+                    <div class="counter-value text-5xl font-bold text-isteBlue transition-transform duration-300 mb-2">47</div>
+                    <p class="text-gray-700">Years Established</p>
+                </div>
+                <div class="counter-item text-center">
+                    <div class="counter-value text-5xl font-bold text-isteBlue transition-transform duration-300 mb-2">10000+</div>
+                    <p class="text-gray-700">Active Members</p>
+                </div>
+                <div class="counter-item text-center">
+                    <div class="counter-value text-5xl font-bold text-isteBlue transition-transform duration-300 mb-2">350+</div>
+                    <p class="text-gray-700">Chapters</p>
+                </div>
+                <div class="counter-item text-center">
+                    <div class="counter-value text-5xl font-bold text-isteBlue transition-transform duration-300 mb-2">1200+</div>
+                    <p class="text-gray-700">Annual Events</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-isteBlue mb-4">Upcoming Events</h2>
+                <div class="h-1 w-24 bg-isteGold mx-auto rounded"></div>
+                <p class="mt-6 max-w-2xl mx-auto text-gray-700">
+                    Join our upcoming conferences, workshops and technical sessions to enhance your skills and knowledge.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-isteBlue to-isteGold flex justify-center items-center">
+                        <div class="text-center text-white">
+                            <div class="text-3xl font-bold">28</div>
+                            <div class="text-lg">OCT</div>
+                            <div class="text-lg">2023</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-isteBlue mb-3">Tech Education Summit</h3>
+                        <p class="text-gray-700 mb-4">
+                            Annual conference bringing together technical educators from across India to discuss innovations in engineering education.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>New Delhi, India</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <i class="fas fa-clock mr-2"></i>
+                            <span>10:00 AM - 5:00 PM</span>
+                        </div>
+                        <a href="#" class="text-isteBlue font-medium hover:text-isteGold transition">Register Now →</a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-isteGold to-isteBlue flex justify-center items-center">
+                        <div class="text-center text-white">
+                            <div class="text-3xl font-bold">16</div>
+                            <div class="text-lg">NOV</div>
+                            <div class="text-lg">2023</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-isteBlue mb-3">Workshop on Emerging Technologies</h3>
+                        <p class="text-gray-700 mb-4">
+                            Hands-on workshop focused on practical applications of AI, IoT, and blockchain technology in education.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Virtual Event</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <i class="fas fa-clock mr-2"></i>
+                            <span>9:30 AM - 4:30 PM</span>
+                        </div>
+                        <a href="#" class="text-isteBlue font-medium hover:text-isteGold transition">Register Now →</a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-isteBlue to-indigo-700 flex justify-center items-center">
+                        <div class="text-center text-white">
+                            <div class="text-3xl font-bold">12</div>
+                            <div class="text-lg">DEC</div>
+                            <div class="text-lg">2023</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-isteBlue mb-3">National Faculty Conclave</h3>
+                        <p class="text-gray-700 mb-4">
+                            Exclusive gathering for technical education leaders to discuss curriculum reforms and teaching methodologies.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Bengaluru, India</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <i class="fas fa-clock mr-2"></i>
+                            <span>All Day Event</span>
+                        </div>
+                        <a href="#" class="text-isteBlue font-medium hover:text-isteGold transition">Register Now →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="#" class="text-isteBlue font-medium hover:text-isteGold transition">View all events →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Section -->
+    <section id="members" class="py-20 bg-isteBlue text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Become a Member</h2>
+                <div class="h-1 w-24 bg-isteGold mx-auto rounded"></div>
+                <p class="mt-6 max-w-2xl mx-auto">
+                    Join India's premier technical education society and gain access to exclusive resources and networking opportunities.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white bg-opacity-10 rounded-xl p-8 backdrop-blur-sm">
+                    <h3 class="text-xl font-bold mb-4">Student Membership</h3>
+                    <div class="text-2xl font-bold mb-4">₹500<span class="text-sm font-normal">/year</span></div>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-isteGold"></i>Access to publications</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-isteGold"></i>Student discounts</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-isteGold"></i>Chapter activities</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-isteGold"></i>Webinars & workshops</li>
+                    </ul>
+                    <a href="#" class="block text-center bg-isteGold text-isteBlue py-2 rounded-md hover:bg-opacity-90 transition-colors font-medium">Join Now</a>
+                </div>
+                
+                <div class="bg-white bg-opacity-20 rounded-xl p-8 backdrop-blur-sm border-2 border-isteGold">
+                    <div class="absolute top-0 right-0 bg-isteGold text-isteBlue text-xs py-1 px-3 rounded-bl-lg font-medium">Popular</div>
+                    <h3 class="text-xl font-bold mb-4">Professional Membership</h3>
+                    <div class="text-2xl font-bold mb-4">₹1500<span class="text-sm font-normal">/year</span></div>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-isteGold"></i>All student benefits</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-isteGold"></i>Technical journals</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-isteGold"></i>Conferences discounts</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-isteGold"></i>Participation in national committees</li>
+                    </ul>
+                    <a href="#" class="block text-center bg-isteGold text-isteBlue py-2 rounded-md hover:bg-opacity-90 transition-colors font-medium">Join Now</a>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 rounded-xl p-8 backdrop-blur-sm">
+                    <h3 class="text-xl font-bold mb-4">Institutional Membership</h3>
+                    <div class="text-2xl font-bold mb-4">₹25,000<span class="text-sm font-normal">/year</span></div>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-isteGold"></i>All professional benefits</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-isteGold"></i>Activities for faculty/students</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-isteGold"></i>Subscription to journals</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-isteGold"></i>Special training programs</li>
+                    </ul>
+                    <a href="#" class="block text-center bg-isteGold text-isteBlue py-2 rounded-md hover:bg-opacity-90 transition-colors font-medium">Join Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-
